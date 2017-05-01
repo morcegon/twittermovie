@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Config extends Model
 {
-    protected $fillable = ['oauth_token', 'oauth_verifier'];
+    protected $fillable = ['oauth_token', 'oauth_token_secret'];
 }

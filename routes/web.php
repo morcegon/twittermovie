@@ -21,6 +21,5 @@ Route::get('trakt', 'TraktController@lastWatchedMovie');
 
 Route::get('movie/{movie_id}', 'TmdbController@');
 
-Route::get('twitter', 'TwitterController@auth');
-Route::get('twitter/token', 'TwitterController@saveToken');
+Route::get('twitter', 'TwitterController@index');
 Route::get('twitter/change-banner', 'TwitterController@changeBanner');

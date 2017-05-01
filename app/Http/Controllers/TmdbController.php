@@ -7,12 +7,16 @@ use Curl\Curl;
 
 class TmdbController extends Controller
 {
-    protected $api_key        = env('TMDB_API_ID');
-    protected $base_url       = "https://api.themoviedb.org/3";
-    protected $image_base_url = "https://image.tmdb.org/t/p/w1280";
+    private $api_key;
+    private $base_url;
+    private $image_base_url;
 
     public function __construct()
     {
+        $this->api_key        = env('TMDB_API_ID');
+        $this->base_url       = "https://api.themoviedb.org/3";
+        $this->image_base_url = "https://image.tmdb.org/t/p/w1280";
+
         $this->curl = new Curl;
     }
 

@@ -7,14 +7,20 @@ use \Curl\Curl;
 
 class TraktController extends Controller
 {
-    protected $client_id     = env('TRAKT_CLIENT_ID');
-    protected $client_secret = env('TRAKT_SECRET');
-    protected $trakt_code    = env('TRAKT_CLIENT_CODE');
-    protected $trakt_url     = "https://api.trakt.tv";
-    protected $trakt_user    = env('TRAKT_USER');
+    private $client_id;
+    private $client_secret;
+    private $trakt_code;
+    private $trakt_url;
+    private $trakt_user;
 
     function __construct()
     {
+        $this->client_id     = env('TRAKT_CLIENT_ID');
+        $this->client_secret = env('TRAKT_SECRET');
+        $this->trakt_code    = env('TRAKT_CLIENT_CODE');
+        $this->trakt_url     = "https://api.trakt.tv";
+        $this->trakt_user    = env('TRAKT_USER');
+
         $this->curl = new Curl;
         $this->curl->setHeader('Content-Type', 'application/json');
         $this->curl->setHeader('trakt-api-version', '2');
